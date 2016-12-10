@@ -1,0 +1,47 @@
+;
+;	File 'topol_Other_chain_L.itp' was generated
+;	By user: hnishi (1002)
+;	On host: fs05
+;	At date: Mon May  2 23:30:27 2016
+;
+;	This is a include topology file
+;
+;	It was generated using program:
+;	pdb2gmx_mpi_d - VERSION 4.6.6
+;
+;	Command line was:
+;	pdb2gmx_mpi_d -f ../00_add_cl/form3.pdb -o conf.gro 
+;
+;	Force field was read from the standard Gromacs share directory.
+;
+
+[ moleculetype ]
+; Name            nrexcl
+ion_MG               1
+
+[ atoms ]
+;   nr       type  resnr residue  atom   cgnr     charge       mass  typeB    chargeB      massB
+; residue   1 MG  rtp MG   q +2.0
+     1         MG      1     MG     MG      1          2     24.305   ; qtot 2
+; residue   2 MG  rtp MG   q +2.0
+     2         MG      2     MG     MG      2          2     24.305   ; qtot 4
+; residue   3 MG  rtp MG   q +2.0
+     3         MG      3     MG     MG      3          2     24.305   ; qtot 6
+; residue   4 MG  rtp MG   q +2.0
+     4         MG      4     MG     MG      4          2     24.305   ; qtot 8
+; residue   5 MG  rtp MG   q +2.0
+     5         MG      5     MG     MG      5          2     24.305   ; qtot 10
+; residue   6 MG  rtp MG   q +2.0
+     6         MG      6     MG     MG      6          2     24.305   ; qtot 12
+; residue   7 MG  rtp MG   q +2.0
+     7         MG      7     MG     MG      7          2     24.305   ; qtot 14
+; residue   8 MG  rtp MG   q +2.0
+     8         MG      8     MG     MG      8          2     24.305   ; qtot 16
+; residue   9 MG  rtp MG   q +2.0
+     9         MG      9     MG     MG      9          2     24.305   ; qtot 18
+
+; Include Position restraint file
+#ifdef POSRES_MG
+#include "posre_Other_chain_L.itp"
+#endif
+

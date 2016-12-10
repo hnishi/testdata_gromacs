@@ -1,0 +1,53 @@
+title               =  main_MD
+define              =  ;-DPOSRES_MG
+
+integrator          =  md
+tinit               =  0.0
+dt                  =  0.002
+nsteps              =  10000 ;2ns
+
+nstcomm             =  5
+nstlog              =  1000
+nstxout             =  0 ;1000    ;2ps
+nstvout             =  0
+nstfout             =  0
+nstlist             =  10
+nstcalcenergy       =  100 ;default
+nstenergy           =  1000
+energygrps          =  ;System
+nstxtcout           =  0
+xtc-precision       =  1000
+xtc-grps            =  System
+ns_type             =  grid
+cutoff-scheme       =  Verlet
+
+pbc		    =  xyz
+
+; PME
+coulombtype         =  PME         ; Particle-Mesh Ewald
+rvdw                =  1.2         ; Van der Waals icut-off
+rcoulomb            =  1.2         ; electroxtatic cut-off
+rlist               =  1.2
+fourierspacing      =  0.16
+pme-order           =  4
+ewald-rtol          =  1e-5
+
+; Temperature coupling
+Tcoupl              =  V-rescale
+tc-grps		    =  system
+ref_t               =  300
+tau_t		    =  0.1
+
+; Pressure coupling
+Pcoupl              =  Berendsen ;Parrinello-Rahman
+Pcoupltype	    =  Isotropic
+tau_p               =  0.5
+compressibility     =  4.5e-5
+ref_p               =  1.0
+continuation	    =  ;yes
+refcoord_scaling = com ; centre of mass for posi rest
+
+; Generate velocites is on at 200 K.
+gen_vel             =  yes ;no
+
+constraints 	    =  h-bonds
